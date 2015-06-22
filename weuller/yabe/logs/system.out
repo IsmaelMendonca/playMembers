@@ -1,0 +1,83 @@
+09:48:55,694 INFO  ~ Starting /Users/weullermarcos/Documents/treinamento_Play/yabe
+:: loading settings :: url = jar:file:/Applications/play-1.3.0/framework/lib/ivy-2.3.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+09:48:55,955 INFO  ~ Module crud is available (/Applications/play-1.3.0/modules/crud)
+09:48:55,955 INFO  ~ Module secure is available (/Applications/play-1.3.0/modules/secure)
+09:48:55,956 INFO  ~ Module cobertura is available (/Applications/play-1.3.0/modules/cobertura-2.4)
+09:48:56,043 INFO  ~ Precompiling ...
+09:49:01,965 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL for default
+09:49:02,590 INFO  ~ Application 'yabe' is now started !
+09:49:02,710 WARN  ~ SQL Error: 42102, SQLState: 42S02
+09:49:02,710 ERROR ~ Table "USER" not found; SQL statement:
+select count(*) as col_0_0_ from User user0_ [42102-176]
+09:49:02,714 ERROR ~ 
+
+@6m60c8i98
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 12)
+PersistenceException occured : org.hibernate.exception.SQLGrammarException: could not prepare statement
+
+play.exceptions.JavaExecutionException: org.hibernate.exception.SQLGrammarException: could not prepare statement
+	at play.jobs.Job.call(Job.java:208)
+	at Invocation.Job(Play!)
+Caused by: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not prepare statement
+	at org.hibernate.ejb.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1387)
+	at org.hibernate.ejb.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1310)
+	at org.hibernate.ejb.QueryImpl.getSingleResult(QueryImpl.java:316)
+	at play.db.jpa.JPQL.count(JPQL.java:31)
+	at models.User.count(User.java)
+	at Bootstrap.doJob(Bootstrap.java:12)
+	at play.jobs.Job.doJobWithResult(Job.java:53)
+	at play.jobs.Job$2.apply(Job.java:196)
+	at play.db.jpa.JPA.withTransaction(JPA.java:234)
+	at play.db.jpa.JPA.withinFilter(JPA.java:195)
+	at play.db.jpa.JPAPlugin$TransactionalFilter.withinFilter(JPAPlugin.java:299)
+	at play.jobs.Job.withinFilter(Job.java:175)
+	at play.jobs.Job.call(Job.java:194)
+	... 1 more
+Caused by: org.hibernate.exception.SQLGrammarException: could not prepare statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:123)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:124)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:193)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:157)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1881)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1858)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:906)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:348)
+	at org.hibernate.loader.Loader.doList(Loader.java:2550)
+	at org.hibernate.loader.Loader.doList(Loader.java:2536)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2366)
+	at org.hibernate.loader.Loader.list(Loader.java:2361)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:495)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:357)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:198)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1194)
+	at org.hibernate.internal.QueryImpl.list(QueryImpl.java:101)
+	at org.hibernate.ejb.QueryImpl.getSingleResult(QueryImpl.java:287)
+	... 11 more
+Caused by: org.h2.jdbc.JdbcSQLException: Table "USER" not found; SQL statement:
+select count(*) as col_0_0_ from User user0_ [42102-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5213)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1220)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1859)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1968)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1853)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1674)
+	at org.h2.command.Parser.parseSelect(Parser.java:1662)
+	at org.h2.command.Parser.parsePrepared(Parser.java:434)
+	at org.h2.command.Parser.parse(Parser.java:306)
+	at org.h2.command.Parser.parse(Parser.java:278)
+	at org.h2.command.Parser.prepareCommand(Parser.java:243)
+	at org.h2.engine.Session.prepareLocal(Session.java:442)
+	at org.h2.engine.Session.prepareCommand(Session.java:384)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:73)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:276)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:159)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:183)
+	... 27 more

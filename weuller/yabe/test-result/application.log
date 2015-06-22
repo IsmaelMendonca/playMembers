@@ -1,0 +1,71 @@
+12 Mai 2015 16:44:49,039 INFO  ~ Starting /Users/weullermarcos/Documents/treinamento_Play/yabe
+12 Mai 2015 16:44:49,419 INFO  ~ Module crud is available (/Applications/play-1.3.0/modules/crud)
+12 Mai 2015 16:44:49,420 INFO  ~ Module secure is available (/Applications/play-1.3.0/modules/secure)
+12 Mai 2015 16:44:49,431 INFO  ~ Module cobertura is available (/Applications/play-1.3.0/modules/cobertura-2.4)
+12 Mai 2015 16:44:50,052 WARN  ~ Actually play.tmp is set to null. Set it to play.tmp=none
+12 Mai 2015 16:44:50,057 WARN  ~ You're running Play! in DEV mode
+12 Mai 2015 16:44:50,145 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+12 Mai 2015 16:45:03,348 ERROR ~ 
+
+@6m5l7n1fg
+Internal Server Error (500) for request GET /@tests
+
+Oops: NoClassDefFoundError
+An unexpected error occured caused by exception NoClassDefFoundError: Could not initialize class org.apache.commons.javaflow.bytecode.transformation.asm.AsmClassTransformer
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.Invoker$Invocation.onException(Invoker.java:244)
+	at play.Invoker$Invocation.run(Invoker.java:306)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.commons.javaflow.bytecode.transformation.asm.AsmClassTransformer
+	at play.classloading.enhancers.ContinuationEnhancer.enhanceThisClass(ContinuationEnhancer.java:76)
+	at play.CorePlugin.enhance(CorePlugin.java:297)
+	at play.plugins.PluginCollection.enhance(PluginCollection.java:551)
+	at play.classloading.ApplicationClasses$ApplicationClass.enhance(ApplicationClasses.java:239)
+	at play.classloading.ApplicationClassloader.loadApplicationClass(ApplicationClassloader.java:165)
+	at play.classloading.ApplicationClassloader.loadClass(ApplicationClassloader.java:82)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at play.classloading.ApplicationClasses.getAssignableClasses(ApplicationClasses.java:71)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:459)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:360)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:42)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:84)
+	at play.mvc.Router.parse(Router.java:161)
+	at play.mvc.Router.parse(Router.java:189)
+	at play.mvc.Router.parse(Router.java:163)
+	at play.mvc.Router.load(Router.java:47)
+	at play.mvc.Router.detectChanges(Router.java:218)
+	... 1 more
+12 Mai 2015 16:45:03,350 ERROR ~ Error during the 500 response generation
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.commons.javaflow.bytecode.transformation.asm.AsmClassTransformer
+	at play.classloading.enhancers.ContinuationEnhancer.enhanceThisClass(ContinuationEnhancer.java:76)
+	at play.CorePlugin.enhance(CorePlugin.java:297)
+	at play.plugins.PluginCollection.enhance(PluginCollection.java:551)
+	at play.classloading.ApplicationClasses$ApplicationClass.enhance(ApplicationClasses.java:239)
+	at play.classloading.ApplicationClassloader.loadApplicationClass(ApplicationClassloader.java:165)
+	at play.classloading.ApplicationClassloader.loadClass(ApplicationClassloader.java:82)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at play.classloading.ApplicationClasses.getAssignableClasses(ApplicationClasses.java:71)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:459)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:360)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:42)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:84)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:179)
+	at play.server.PlayHandler.serve500(PlayHandler.java:792)
+	at play.server.PlayHandler$NettyInvocation.run(PlayHandler.java:247)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)
+13 Mai 2015 09:36:17,712 INFO  ~ Cobertura plugin: generating test coverage report
+13 Mai 2015 09:36:19,722 INFO  ~ Test coverage report has been generated: file:/Users/weullermarcos/Documents/treinamento_Play/yabe/test-result/code-coverage/index.html
