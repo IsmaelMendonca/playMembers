@@ -1,11 +1,13 @@
 package models;
  
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import play.data.validation.Required;
+import play.db.jpa.Model;
 
-import javax.persistence.*;
-
-import play.db.jpa.*;
-import play.data.validation.*;
  
 @Table(name = "tb_tag")
 @Entity

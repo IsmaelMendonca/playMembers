@@ -1,7 +1,8 @@
 package controllers;
+
+import models.UserBO;
  
-import models.*;
- 
+
 public class SecurityController extends Secure.Security {
 	
 	static boolean authenticate(String username, String password) {

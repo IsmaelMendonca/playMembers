@@ -2,8 +2,8 @@ package controllers;
  
 import models.TagBO;
 import controllers.CRUD.For;
-import play.*;
-import play.mvc.*;
+import play.mvc.With;
+
  
 @Check("admin")
 @For(TagBO.class)

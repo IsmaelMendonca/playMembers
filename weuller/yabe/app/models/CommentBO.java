@@ -1,11 +1,15 @@
 package models;
  
-import java.util.*;
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import play.data.validation.MaxSize;
+import play.data.validation.Required;
+import play.db.jpa.Model;
 
-import javax.persistence.*;
-
-import play.db.jpa.*;
-import play.data.validation.*;
  
 @Table(name = "tb_comment")
 @Entity
@@ -39,7 +43,5 @@ public class CommentBO extends Model {
 	public CommentBO() {
 		super();
         this.postedAt = new Date();
-	}
- 
-    
+	}  
 }

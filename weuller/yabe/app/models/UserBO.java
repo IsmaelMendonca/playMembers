@@ -1,11 +1,14 @@
 package models;
  
-import java.util.*;
-
-import javax.persistence.*;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import play.data.validation.Email;
+import play.data.validation.Password;
+import play.data.validation.Required;
+import play.data.validation.Unique;
 import play.db.jpa.*;
-import play.data.validation.*;
+
  
 @Table(name = "tb_user")
 @Entity //Identifica a classe como uma entidade a ser persistida. 

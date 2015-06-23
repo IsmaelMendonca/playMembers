@@ -2,8 +2,7 @@ package controllers;
  
 import models.UserBO;
 import controllers.CRUD.For;
-import play.*;
-import play.mvc.*;
+import play.mvc.With;
  
 @Check("admin")
 @For(UserBO.class)
