@@ -17,28 +17,62 @@ public class CommentBO extends Model {
  
     @Required
     @Column(name = "author")
-    public String author;
+    private String author;
     
     @Required
     @Column(name = "postedAt")
-    public Date postedAt;
+    private Date postedAt;
      
     @Lob
     @Required
     @MaxSize(10000)
     @Column(name = "content")
-    public String content;
+    private String content;
     
     @ManyToOne
     @Required
-    public PostBO post; 
+    private PostBO post; 
     
-    public CommentBO(PostBO post, String author, String content) {
+    public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public Date getPostedAt() {
+		return postedAt;
+	}
+
+	public void setPostedAt(Date postedAt) {
+		this.postedAt = postedAt;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public PostBO getPost() {
+		return post;
+	}
+
+	public void setPost(PostBO post) {
+		this.post = post;
+	}
+
+	public CommentBO(PostBO post, String author, String content) {
         this.post = post;
         this.author = author;
         this.content = content;
         this.postedAt = new Date();
     }
+    
+    
 
 	public CommentBO() {
 		super();

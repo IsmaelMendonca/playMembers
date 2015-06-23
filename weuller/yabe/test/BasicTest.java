@@ -57,10 +57,10 @@ public class BasicTest extends UnitTest {
         assertEquals(1, bobPosts.size());
         PostBO firstPost = bobPosts.get(0);
         assertNotNull(firstPost);
-        assertEquals(bob, firstPost.author);
-        assertEquals("My first post", firstPost.title);
-        assertEquals("Hello world", firstPost.content);
-        assertNotNull(firstPost.postedAt);
+        assertEquals(bob, firstPost.getAuthor());
+        assertEquals("My first post", firstPost.getTitle());
+        assertEquals("Hello world", firstPost.getContent());
+        assertNotNull(firstPost.getPostedAt());
     }
     
     @Test
@@ -83,15 +83,15 @@ public class BasicTest extends UnitTest {
      
         CommentBO firstComment = bobPostComments.get(0);
         assertNotNull(firstComment);
-        assertEquals("Jeff", firstComment.author);
-        assertEquals("Nice post", firstComment.content);
-        assertNotNull(firstComment.postedAt);
+        assertEquals("Jeff", firstComment.getAuthor());
+        assertEquals("Nice post", firstComment.getContent());
+        assertNotNull(firstComment.getPostedAt());
      
         CommentBO secondComment = bobPostComments.get(1);
         assertNotNull(secondComment);
-        assertEquals("Tom", secondComment.author);
-        assertEquals("I knew that !", secondComment.content);
-        assertNotNull(secondComment.postedAt);
+        assertEquals("Tom", secondComment.getAuthor());
+        assertEquals("I knew that !", secondComment.getContent());
+        assertNotNull(secondComment.getContent());
     }
     
     @Test
@@ -116,8 +116,8 @@ public class BasicTest extends UnitTest {
         assertNotNull(bobPost);
      
         // Navigate to comments
-        assertEquals(2, bobPost.comments.size());
-        assertEquals("Jeff", bobPost.comments.get(0).author);
+        assertEquals(2, bobPost.getComments().size());
+        assertEquals("Jeff", bobPost.getComments().get(0).getAuthor());
         
         // Delete the post
         bobPost.delete();
@@ -154,14 +154,14 @@ public class BasicTest extends UnitTest {
         // Find the most recent post
         PostBO frontPost = PostBO.find("order by postedAt desc").first();
         assertNotNull(frontPost);
-        assertEquals("About the model layer", frontPost.title);
+        assertEquals("About the model layer", frontPost.getTitle());
      
         // Check that this post has two comments
-        assertEquals(2, frontPost.comments.size());
+        assertEquals(2, frontPost.getComments().size());
      
         // Post a new comment
         frontPost.addComment("Jim", "Hello guys");
-        assertEquals(3, frontPost.comments.size());
+        assertEquals(3, frontPost.getComments().size());
         assertEquals(4, CommentBO.count());
     }
     

@@ -45,14 +45,14 @@ public class AdminController extends Controller {
             // Retrieve post
             post = PostBO.findById(id);
             // Edit
-            post.title = title;
-            post.content = content.trim();
-            post.tags.clear();
+            post.setTitle(title);
+            post.setContent(content); 
+            post.getTags().clear();
         }
         // Set tags list
         for(String tag : tags.split("\\s+")) {
             if(tag.trim().length() > 0) {
-                post.tags.add(TagBO.findOrCreateByName(tag));
+				post.getTags().add(TagBO.findOrCreateByName(tag));
             }
         }
         // Validate

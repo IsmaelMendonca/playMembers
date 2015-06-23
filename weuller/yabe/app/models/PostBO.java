@@ -26,27 +26,27 @@ public class PostBO extends Model {
  
     @Required
     @Column(name = "title")
-    public String title;
+    private String title;
     
     @Required
     @Column(name = "postedAt")
-    public Date postedAt;
+    private Date postedAt;
     
     @Lob
     @Required
     @MaxSize(10000)
     @Column(name = "content")
-    public String content;
+    private String content;
     
     @Required
     @ManyToOne
-    public UserBO author;
+    private UserBO author;
     
     @OneToMany(mappedBy="post", cascade=CascadeType.ALL)
-    public List<CommentBO> comments;
+    private List<CommentBO> comments;
     
     @ManyToMany(cascade=CascadeType.PERSIST)
-    public Set<TagBO> tags;
+    private Set<TagBO> tags;
      
     public PostBO(UserBO author, String title, String content) {
         this.comments = new ArrayList<CommentBO>();
@@ -56,9 +56,56 @@ public class PostBO extends Model {
         this.content = content;
         this.postedAt = new Date();
     }
-    
+       
+    public String getTitle() {
+		return title;
+	}
 
-    public PostBO() {
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Date getPostedAt() {
+		return postedAt;
+	}
+
+	public void setPostedAt(Date postedAt) {
+		this.postedAt = postedAt;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public UserBO getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(UserBO author) {
+		this.author = author;
+	}
+
+	public List<CommentBO> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<CommentBO> comments) {
+		this.comments = comments;
+	}
+
+	public Set<TagBO> getTags() {
+		return tags;
+	}
+
+	public void setTags(Set<TagBO> tags) {
+		this.tags = tags;
+	}
+
+	public PostBO() {
 		super();
 		this.postedAt = new Date();
 	}

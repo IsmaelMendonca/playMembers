@@ -15,13 +15,21 @@ public class TagBO extends Model implements Comparable<TagBO> {
  
     @Required
     @Column(name = "name")
-    public String name;
+    private String name;
  
     private TagBO(String name) {
         this.name = name;
     }
- 
-    public String toString() {
+  
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String toString() {
         return name;
     }
  

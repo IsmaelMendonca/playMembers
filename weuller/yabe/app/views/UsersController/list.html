@@ -16,6 +16,14 @@
 		   ${object.email}
 		  </a>
 		 #{/crud.custom}
+		 #{crud.custom 'isAdmin'}
+		 	#{if object.isAdmin}
+		 		<img src="../../public/images/icn-enabled.png">
+		 	#{/if}
+		 	#{else}
+		 		<img src="../../public/images/icn-disabled.png">
+		 	#{/else}	 
+		 #{/crud.custom}
 		#{/crud.table}
     </div>
 
