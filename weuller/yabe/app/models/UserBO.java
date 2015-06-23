@@ -3,11 +3,13 @@ package models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
 import play.data.validation.Email;
 import play.data.validation.Password;
 import play.data.validation.Required;
 import play.data.validation.Unique;
-import play.db.jpa.*;
+import play.db.jpa.Model;
+
 
  
 @Table(name = "tb_user")
