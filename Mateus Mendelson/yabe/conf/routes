@@ -1,0 +1,36 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       ApplicationController.index
+GET     /posts/{<[0-9]+>id}             		ApplicationController.show
+GET     /captcha                                ApplicationController.captcha
+GET     /posts/{tag}                    		ApplicationController.listTagged
+GET     /admin/myPosts/{id}                 	AdminController.form
+GET     /admin/new                          	AdminController.form
+
+GET		/admin/posts							PostsController.list
+GET		/admin/tags							    TagsController.list
+GET		/admin/comments						    CommentsController.list
+GET		/admin/users						    UsersController.list
+
+POST    /admin/myPosts/{id}                 	AdminController.save
+POST    /admin/new                          	AdminController.save
+POST    /posts/{postId}/comments                ApplicationController.postComment
+
+
+# Administration
+GET     /admin/?                                AdminController.index
+*       /admin                                  module:crud
+# Import Secure routes
+*       /                                       module:secure
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

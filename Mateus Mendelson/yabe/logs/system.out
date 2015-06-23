@@ -1,0 +1,25 @@
+11:15:22,320 INFO  ~ Starting /Users/mesteves/Documents/workspace/Play/yabe
+:: loading settings :: url = jar:file:/Applications/play-1.3.0/framework/lib/ivy-2.3.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+11:15:23,108 INFO  ~ Module crud is available (/Applications/play-1.3.0/modules/crud)
+11:15:23,108 INFO  ~ Module secure is available (/Applications/play-1.3.0/modules/secure)
+11:15:23,108 INFO  ~ Module cobertura is available (/Applications/play-1.3.0/modules/cobertura-2.4)
+11:15:23,502 INFO  ~ Precompiling ...
+11:15:31,998 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL for default
+11:15:33,430 INFO  ~ HHH000262: Table not found: Comment
+11:15:33,431 ERROR ~ Can't start in PROD mode with errors
+javax.persistence.PersistenceException: Unable to build EntityManagerFactory
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:924)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:899)
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:212)
+	at play.plugins.PluginCollection.onApplicationStart(PluginCollection.java:515)
+	at play.Play.start(Play.java:537)
+	at play.Play.init(Play.java:309)
+	at play.server.Server.main(Server.java:160)
+Caused by: org.hibernate.HibernateException: Missing table: Comment
+	at org.hibernate.cfg.Configuration.validateSchema(Configuration.java:1302)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:155)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:512)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1797)
+	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:96)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914)
+	... 6 more
