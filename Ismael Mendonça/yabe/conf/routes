@@ -21,19 +21,23 @@ GET     /admin/myPosts/{id}                     AdminController.form
 GET     /admin/new                              AdminController.form
 
 GET     /admin/posts                            PostController.list
-
+GET     /admin/posts/new                        PostController.blank
+POST    /admin/posts/new                        PostController.create
 GET     /admin/posts/{id}                       PostController.show
 
 GET     /admin/tags                             TagController.list
-
+GET     /admin/tags/new                         TagController.blank
+POST    /admin/tags/new                         TagController.create
 GET     /admin/tags/{id}                        TagController.show
 
 GET     /admin/comments                         CommentController.list
-
+GET     /admin/comments/new                     CommentController.blank
+POST    /admin/comments/new                     CommentController.create
 GET     /admin/comments/{id}                    CommentController.show
 
 GET     /admin/users                            UserController.list
-
+GET     /admin/users/new                        UserController.blank
+POST    /admin/users/new                        UserController.create
 GET     /admin/users/{id}                       UserController.show
 
 POST    /admin/myPosts/{id}                     AdminController.save

@@ -8,21 +8,6 @@
     <div class="objectForm">
     #{form action:@save(object._key()), enctype:'multipart/form-data'}
 		#{crud.form}
-		
-			#{crud.custom 'postedAt'}
-				#{field 'object.postedAt'}
-					<label for="${field.id}">
-					   &{field.name}
-					</label>
-					
-					<input id="${field.id}" class="${field.errorClass}" type="text" name="${field.name}" value="${field?.value?.format()}" size="10" disabled />
-					
-					#{ifError field.name}
-					   <span class="error">${field.error.raw()}</span>
-					#{/ifError}
-				#{/field}                   
-			#{/crud.custom}
-		
 		    #{crud.custom 'tags'}
 		        <label for="tags">
 		            &{'tags'}
@@ -54,8 +39,8 @@
 		#{/crud.form}
 		
         <p class="crudButtons">
-            <input type="submit" name="_save" value="&{'crud.save', type.modelName}" />
-            <input type="submit" name="_saveAndContinue" value="&{'crud.saveAndContinue', type.modelName}" />
+            <input type="submit" class="submitButton" name="_save" value="&{'crud.save', type.modelName}" />
+            <input type="submit" class="submitButton" name="_saveAndContinue" value="&{'crud.saveAndContinue', type.modelName}" />
         </p>
     #{/form}
     </div>

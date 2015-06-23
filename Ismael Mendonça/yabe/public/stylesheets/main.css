@@ -283,7 +283,7 @@ form textarea {
     height: 150px;
 }
 
-form input, form textarea {
+form textarea {
     font-size: 14px;
 }
 
@@ -445,14 +445,11 @@ tr.odd {
     font-size: 80%;
 }
 
-.crudButtons input {
-    font-size: 110%;
-}
-
 .crudButtons {
     margin-top: 20px;
     border-top: 1px dotted #8B98AD;
     padding-top: 10px;
+    text-align: right;
 }
 
 .crudFlash {
@@ -544,4 +541,18 @@ tr.odd {
 
 .hasError {
     background: pink;
+}
+
+.submitButton {
+    background: #389E43;
+    padding: 4px 9px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    color: #fff;
+    border: none;
+    font-weight: bolder;    
+}
+
+.crudButtons input {
+    font-size: 90%;
 }
