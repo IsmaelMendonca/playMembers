@@ -10,7 +10,16 @@
     </div>
 
     <div id="crudListTable">
-        #{crud.table fields:['email','fullname','admin'] /}
+        #{crud.table fields:['email','fullname','admin']}
+	        #{crud.custom 'admin'}
+	            #{if object.admin}
+                    <img src="../../public/images/icn-enabled.png"/>
+	            #{/if}
+	            #{else}
+	                <img src="../../public/images/icn-disabled.png"/>
+	            #{/else}
+	        #{/crud.custom}
+        #{/crud.table}
     </div>
 
     <div id="crudListPagination">

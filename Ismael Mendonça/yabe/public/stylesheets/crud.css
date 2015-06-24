@@ -175,6 +175,9 @@ label {
 	padding: 10px;
 	border-bottom: 1px solid #eee;
 	position: relative;
+	width: 47%;
+	display: inline-table;
+	vertical-align: top;
 }
 
 .crud_hidden {
@@ -208,8 +211,8 @@ label {
 	font-size: 70%;
 	color: #888;
 	display: block;
-	margin-left: 20%;
 	margin-top: 5px;
+	
 }
 
 form .currentAttachment {
@@ -278,6 +281,7 @@ form .removeAttachment {
 	-webkit-border-radius: 8px;
 	color: #fff !important;
 	text-decoration: none;
+	font-weight: bolder;
 }
 
 #crudListAdd a:hover {
@@ -311,6 +315,7 @@ form .removeAttachment {
 
 #crudListPagination .crudCount {
 	margin: 0;
+	font-weight: bolder;
 }
 
 #crudListPagination .crudPages {
