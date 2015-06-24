@@ -6,7 +6,7 @@
  
 <div class="objectForm">
 #{form action:@save(object.id), enctype:'multipart/form-data'}
-#{crud.form fields:[ 'author', 'title', 'postedAt', 'content', 'tags']}
+#{crud.form fields:[ 'author', 'title', /*'postedAt', */'content', 'tags']}
     #{crud.custom 'tags'}
         <label for="tags">
             &{'tags'}
@@ -24,7 +24,7 @@
 	        }
 	    </script>
 	    <div class="tags-list">
-	        #{list items:models.Tag.findAll(), as:'tag'}
+	        #{list items:models.TagBO.findAll(), as:'tag'}
 	           <span id="${tag.id}" onclick="toggle(this)" 
 	                class="tag ${object.tags.contains(tag) ? 'selected' : ''}">
 	               ${tag}
@@ -35,7 +35,7 @@
 	    </div>
     #{/crud.custom}
     
-    #{crud.custom 'postedAt'}
+    <!-- #{crud.custom 'postedAt'}
 			#{field 'object.postedAt'}
 			    <label for="${field.id}">
 			        &{'postedAt'}
@@ -45,7 +45,7 @@
 			        <span class="error">${field.error.raw()}</span>
 			    #{/ifError}
 			#{/field}
-         #{/crud.custom}
+    #{/crud.custom} -->
 #{/crud.form}
     <p class="crudButtons">
         <input type="submit" name="_save" 
