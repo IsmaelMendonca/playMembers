@@ -447,6 +447,17 @@ tr.odd {
 
 .crudButtons input {
     font-size: 110%;
+    margin: 0;
+    background: #54BD06;
+    color: #fff !important;
+   	text-decoration: none;
+	border: 0px;
+	top: 0;
+	right: 0;
+	padding: 3px 10px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	
 }
 
 .crudButtons {

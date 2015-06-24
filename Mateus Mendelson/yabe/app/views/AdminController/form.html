@@ -18,19 +18,26 @@
     <p>
         #{field 'title'}
         <label>Post title:</label>
-        <input type="text" name="${field.name}" 
-            value="${post?.title}" />
-        <span class="error">#{error 'post.title' /}</span>
+        <input type="text" name="${field.name}" value="${post?.title}" />
+        #{ifError 'post.title'}
+        	<span class="error">#{error 'post.title' /}</span>
+        #{/ifError}
         #{/field}
     </p>
  
     <p>
         #{field 'content'}
         <label>Write here:</label>
-        <textarea name="${field.name}">
-          ${post?.content}
-        </textarea>
-        <span class="error">#{error 'post.title' /}</span>
+        #{if post?.id}
+	        <textarea name="${field.name}">${post?.content}</textarea>
+        #{/if}
+        #{else}
+        	<textarea name="${field.name}"></textarea>
+        #{/else}
+        
+        #{ifError 'post.content'}
+        	<span class="error">#{error 'post.content' /}</span>
+        #{/ifError}
         #{/field}
     </p>
  
