@@ -1,5 +1,24 @@
 /** Main layout **/
 
+#languages {
+	color: black;
+	background-color: white;
+	border-radius: 7px;
+	text-align: center;
+	font-size: small;
+	position: relative;
+	right: -690px;
+	top: -35px;
+	width: 170px;
+	height: 30px;
+	text-align: center;
+}
+
+.langImg {
+	position: relative;
+	top: 5px;
+}
+
 html, body {
     background: #0A2F5F !important;
     font-family: Helvetica, Arial, Sans !important;
@@ -447,7 +466,17 @@ tr.odd {
 }
 
 .crudButtons input {
-    font-size: 110%;
+    margin: 0;
+	top: 0;
+	right: 0;
+	background: #54BD06;
+	padding: 3px 10px;
+	font-size: 110%;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	color: #fff !important;
+	text-decoration: none;
+	border: 0px;
 }
 
 .crudButtons {

@@ -1,0 +1,39 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+title=Title
+content=Content
+postedAt=Posted at
+author=Author
+post=Related post
+tags=Tags set
+name=Common name
+email=Email
+password=Password
+fullname=Full name
+isAdmin=User is admin
+secure.username=Your email:
+secure.password=Your password:
+secure.signin=Log in now
+PostBO=Post
+CommentBO=Comment
+TagBO=Tag
+UserBO=User
+views.main.tools.login=Log in to write something
+views.main.title.about=About this blog
+views.admin.header.tools.logout=Log out
+My_posts=My posts
+you_have_written=you have written
+views.AdminController.index.write_post=write a new post
+views.admin.header.logo.administration=administration
+views.main.footer1=Yabe is a (not that) powerful blog engine built with the
+views.main.footer2=as a tutorial application.
+views.admin.footer1=Yabe is a (not that) powerful blog engine built with the
+views.admin.footer2=as a tutorial application.
+views.AdminController.form.Write=Write
+views.AdminController.form.a_new_post=a new post
+views.AdminController.form.Edit=Edit
+views.AdminController.form.this_post=this post
+views.AdminController.form.error.correct=Please correct these errors.
+views.AdminController.form.Post_title=Post title
+views.AdminController.form.publishPost=Publish this post to the blog

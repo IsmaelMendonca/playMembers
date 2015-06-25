@@ -1,23 +1,23 @@
 #{extends 'admin.html' /}
  
 #{ifnot post?.id}
-    <h3>Write, <span>a new post</span></h3>
+    <h3>&{'views.AdminController.form.Write'}, <span>&{'views.AdminController.form.a_new_post'}</span></h3>
 #{/ifnot}
 #{else}
-    <h3>Edit, <span>this post</span></h3>
+    <h3>&{'views.AdminController.form.Edit'}, <span>&{'views.AdminController.form.this_post'}</span></h3>
 #{/else}
  
 #{form @save(post?.id)}
  
     #{ifErrors}
         <p class="error">
-            Please correct these errors.
+            &{'views.AdminController.form.error.correct'}
         </p>
     #{/ifErrors}
      
     <p>
         #{field 'title'}
-        <label>Post title:</label>
+        <label>&{'views.AdminController.form.Post_title'}:</label>
         <input type="text" name="${field.name}" value="${post?.title}" />
         #{ifError 'post.title'}
         	<span class="error">#{error 'post.title' /}</span>
@@ -27,7 +27,7 @@
  
     <p>
         #{field 'content'}
-        <label>Write here:</label>
+        <label>&{'Write'} &{'here'}:</label>
         #{if post?.id}
 	        <textarea name="${field.name}">${post?.content}</textarea>
         #{/if}
@@ -43,14 +43,14 @@
  
     <p>
         #{field 'tags'}
-        <label>Enter some tags:</label>
+        <label>&{'Enter'} &{'some'} tags:</label>
         <input type="text" size="50" 
             name="${field.name}" value="${post?.tags?.join(' ')}" />
         #{/field}
     </p>
     
     <p>
-        <input type="submit" value="Publish this post to the blog" />
+        <input type="submit" value="&{'views.AdminController.form.publishPost'}" />
     </p>
     
 #{/form}

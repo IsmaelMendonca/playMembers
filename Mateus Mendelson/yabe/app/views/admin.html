@@ -15,11 +15,11 @@
         
         <div id="header">
             <div id="logo">
-                yabe. <span>administration</span>
+                yabe. <span>&{'views.admin.header.logo.administration'}</span>
             </div>
             <ul id="tools">
                 <li>
-                    <a href="@{Secure.logout()}">Log out</a>
+                    <a href="@{Secure.logout()}">&{'views.admin.header.tools.logout'}</a>
                 </li>
             </ul>
         </div>
@@ -27,7 +27,7 @@
         <div id="main">
 		    <ul id="adminMenu">
 		        <li class="${request.controller == 'Admin' ? 'selected' : ''}">
-		            <a href="@{AdminController.index()}">My posts</a>
+		            <a href="@{AdminController.index()}">&{'My_posts'}</a>
 		        </li>
 		        #{secure.check 'admin'}
 		            <li class="${request.controller == 'Posts' ? 'selected' : ''}">
@@ -37,22 +37,26 @@
 		                <a href="@{TagsController.list()}">Tags</a>
 		            </li>
 		            <li class="${request.controller == 'Comments' ? 'selected' : ''}">
-		                <a href="@{CommentsController.list()}">Comments</a>
+		                <a href="@{CommentsController.list()}">&{'Comments'}</a>
 		            </li>
 		            <li class="${request.controller == 'Users' ? 'selected' : ''}">
-		                <a href="@{UsersController.list()}">Users</a>
+		                <a href="@{UsersController.list()}">&{'Users'}</a>
 		            </li>
 		        #{/secure.check}
 		    </ul>
+		    
+		    <div id="languages">
+			    <a href="@{AdminController.setLanguage('pt', request.path)}" style="color:'black';"><img class="langImg" alt="flag-ptBR" height="25" width="25" src="/./public/images/icn-flag-ptBR.ico"> Português</a>
+			    <a href="@{AdminController.setLanguage('en', request.path)}" style="color:'black';"><img class="langImg" alt="flag-en" height="25" width="25" src="/./public/images/icn-flag-en.ico"> English</a>
+			</div>
+		    
 		    
 		    #{doLayout /} 
 		</div>
 
         
         <p id="footer">
-            Yabe is a (not so) powerful blog engine built with the 
-            <a href="https://www.playframework.com">Play framework</a>
-            as a tutorial application.
+            &{'views.admin.footer1'} <a href="https://www.playframework.com">framework Play</a> &{'views.admin.footer2'}
         </p>
         
     </body>
