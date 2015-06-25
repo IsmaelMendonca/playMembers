@@ -19,31 +19,37 @@
             </div>
             <ul id="tools">
                 <li>
-                    <a href="@{Secure.logout()}">Log out</a>
+                    <a href="@{Secure.logout()}">&{'LogOut'}</a>
                 </li>
             </ul>
         </div>
         
 		<div id="main">
-		    
 		    <ul id="adminMenu">
 		        <li class="${request.controller == 'Admin' ? 'selected' : ''}">
 		            <a href="@{index()}">My posts</a>
 		        </li>
 		        #{secure.check 'admin'}
 		            <li class="${request.controller == 'Posts' ? 'selected' : ''}">
-		                <a href="@{PostsController.list()}">Posts</a>
+		                <a href="@{PostsController.list()}">&{'Posts'}</a>
 		            </li>
 		            <li class="${request.controller == 'Tags' ? 'selected' : ''}">
-		                <a href="@{TagsController.list()}">Tags</a>
+		                <a href="@{TagsController.list()}">&{'Tags'}</a>
 		            </li>
 		            <li class="${request.controller == 'Comments' ? 'selected' : ''}">
-		                <a href="@{CommentsController.list()}">Comments</a>
+		                <a href="@{CommentsController.list()}">&{'Comments'}</a>
 		            </li>
 		            <li class="${request.controller == 'Users' ? 'selected' : ''}">
-		                <a href="@{UsersController.list()}">Users</a>
+		                <a href="@{UsersController.list()}">&{'Users'}</a>
 		            </li>
 		        #{/secure.check}
+		       		<div id="internalization">
+		       			<img class="language" src="../../public/images/icn-flag-ptBR.ico"> 
+		        		<a class="langLink" href="@{AdminController.selectlanguage('pt', request.path)}" style="background:none; color: black; padding: 0px;">Português</a>
+						<img class="language" src="../../public/images/icn-flag-en.ico">
+						<a class="langLink" href="@{AdminController.selectlanguage('en', request.path)}" style="background:none; color: black; padding: 0px;">English</a>
+		       		</div> 	
+		        
 		    </ul>
 		    
 		    #{doLayout /} 

@@ -457,7 +457,6 @@ tr.odd {
 	padding: 3px 10px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
-	
 }
 
 .crudButtons {
@@ -560,4 +559,22 @@ tr.odd {
 /**/
 #crud #crudContent a {
 	color: #060000;
+}
+
+#internalization {
+	background: #ffffff;
+	position: relative;
+	left: 668px;
+	border-radius: 10px;
+	padding: 3px;
+	top: -18px;
+	width: 196px;
+	height: 30px;
+
+}
+
+.language {
+	width: 25px;
+	height: 25px;
+	vertical-align: bottom;
 }

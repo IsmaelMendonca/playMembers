@@ -1,6 +1,18 @@
-# You can specialize this file for each language.
-# For example, for French create a messages.fr file
-#
+#Arquivo em Ingês
+
+loginMessage = Log in to write something
+
+Post = Post
+Posts = Posts
+Tag = Tag
+Tags = Tags 
+Comment = Comment 
+Comments = Comments 
+User = User 
+Users = Users 
+LogOut = Log out
+
+
 title=Title
 content=Content
 postedAt=Posted at
@@ -16,3 +28,7 @@ isAdmin=User is admin
 secure.username=Your email:
 secure.password=Your password:
 secure.signin=Log in now
+
+
+
+
