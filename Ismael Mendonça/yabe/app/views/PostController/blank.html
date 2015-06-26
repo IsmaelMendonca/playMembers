@@ -1,29 +1,13 @@
 #{extends 'CRUD/layout.html' /}
-#{set title:messages.get('crud.blank.title', type.modelName) /}
+#{set title:messages.get('add.post', type.modelName) /}
 
 <div id="crudBlank" class="${type.name}">
 
-    <h2 id="crudBlankTitle">&{'crud.blank.title', type.modelName}</h2>
+    <h2 id="crudBlankTitle">&{'add.post', type.modelName}</h2>
 
     <div class="objectForm">
     #{form action:@create(), enctype:'multipart/form-data'}
-        #{crud.form}
-        
-            #{crud.custom 'postedAt'}
-                #{field 'object.postedAt'}
-                    <label for="${field.id}">
-                       &{field.name}
-                    </label>
-                    
-                    <input id="${field.id}" class="${field.errorClass}" type="text" name="${field.name}" value="${field?.value?.format()}" size="10" disabled />
-                    
-                    #{ifError field.name}
-                       <span class="error">${field.error.raw()}</span>
-                    #{/ifError}
-                #{/field}                   
-            #{/crud.custom}
-        
-        #{/crud.form}
+        #{crud.form /}
         
         <p class="crudButtons">
             <input type="submit" class="submitButton" name="_save" value="&{'crud.save', type.modelName}" />

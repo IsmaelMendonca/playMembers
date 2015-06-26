@@ -5,6 +5,8 @@ import java.util.List;
 import models.PostBO;
 import models.TagBO;
 import models.UserBO;
+import play.i18n.Lang;
+import play.i18n.Messages;
 import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.With;
@@ -25,7 +27,9 @@ public class AdminController extends Controller {
 		
 		String user = SecurityController.connected();
 		List<PostBO> posts = PostBO.find("author.email", user).fetch();
-		render(posts);
+		String msgPost = Messages.get("post.post");
+		String msgPosts = Messages.get("post.posts");
+		render(posts, msgPost, msgPosts);
 	}
 	
 	public static void form(Long id) {
@@ -64,5 +68,17 @@ public class AdminController extends Controller {
 		
 		post.save();
 		index();
+	}
+	
+	public static void changeLanguage(String language, String currentPage) {
+		
+		Lang.change(language);
+		redirect(currentPage);
+	}
+	
+	@Before
+	public static void getCurrentLanguage() {
+		
+		renderArgs.put("lang", Lang.get());
 	}
 }

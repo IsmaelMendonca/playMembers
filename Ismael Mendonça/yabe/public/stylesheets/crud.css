@@ -344,6 +344,7 @@ form .removeAttachment {
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 	cursor: pointer;
+	font-weight: bolder;
 }
 
 .crudDelete input:hover {

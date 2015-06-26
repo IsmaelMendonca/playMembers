@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Administration</title>
+        <title>&{'administration'}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         #{get 'moreStyles' /}
         <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}" />
@@ -13,44 +13,52 @@
     
         <div id="header">
             <div id="logo">
-                Ismael. <span>administration</span>
+                Ismael. <span>&{'administration'}</span>
             </div>
             <ul id="tools">
                 <li>
-                    <a href="@{Secure.logout()}">Log out</a>
+                    <a href="@{Secure.logout()}">&{'log.out'}</a>
                 </li>
             </ul>
         </div>
         
         <div id="main">
         
-            <ul id="adminMenu">
+            <ul id="adminMenu">                
                 <li class="${request.controller == 'AdminController' ? 'selected' : ''}">
-                    <a href="@{AdminController.index()}">My posts</a>
+                    <a href="@{AdminController.index()}">&{'my.post'}</a>
                 </li>
                 #{secure.check 'admin'}
                     <li class="${request.controller == 'PostController' ? 'selected' : ''}">
-                        <a href="@{PostController.list()}">Posts</a>
+                        <a href="@{PostController.list()}">&{'posts'}</a>
                     </li>
                     <li class="${request.controller == 'TagController' ? 'selected' : ''}">
-                        <a href="@{TagController.list()}">Tags</a>
+                        <a href="@{TagController.list()}">&{'tags'}</a>
                     </li>
                     <li class="${request.controller == 'CommentController' ? 'selected' : ''}">
-                        <a href="@{CommentController.list()}">Comments</a>
+                        <a href="@{CommentController.list()}">&{'comments'}</a>
                     </li>
                     <li class="${request.controller == 'UserController' ? 'selected' : ''}">
-                        <a href="@{UserController.list()}">Users</a>
+                        <a href="@{UserController.list()}">&{'users'}</a>
                     </li>
                 #{/secure.check}
+                    <li class="langArea">
+						<a style="background: none; padding: 1px;" href="@{AdminController.changeLanguage('br', request.path)}">
+				            <img class="${lang == 'br' ? 'languageSelected' : 'language'}" src="../../public/images/icn-flag-ptBR.ico" alt="Português" title="Português">
+			            </a>
+						<a style="background: none; padding: 1px;" href="@{AdminController.changeLanguage('en', request.path)}">
+						    <img class="${lang == 'en' ? 'languageSelected' : 'language'}" src="../../public/images/icn-flag-en.ico" alt="English" title="English">
+					    </a>
+                    </li>
             </ul>
-            
+                        
             #{doLayout /}
         </div>
         
         <p id="footer">
-            Yabe is a (not so) powerful blog engine built with the
+            &{'yabe.blog'}
              <a href="https://www.playframework.com">Play framework</a> 
-             as a tutorial application.
+             &{'yabe.footer'}.
         </p>
         
     </body>

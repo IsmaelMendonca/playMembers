@@ -27,16 +27,16 @@ public class CommentBO extends Model {
 	@Column(name="posted_at")
 	private Date postedAt;
 	
+	@ManyToOne
+	@Required
+	@JoinColumn(name="id_post")
+	private PostBO post;
+	
 	@Lob
 	@Required
 	@MaxSize(10000)
 	@Column(name="content")
 	private String content;
-	
-	@ManyToOne
-	@Required
-	@JoinColumn(name="id_post")
-	private PostBO post;
 	
 	public CommentBO() {
 		super();

@@ -1,7 +1,7 @@
 #{extends 'admin.html' /}
 
-<h3>Welcome ${user}, <span>you have written ${posts.size() ?: 'no'} 
-${posts.pluralize('post', 'posts')} so far</span></h3>
+<h3>&{'welcome'} ${user}, <span>&{'posts.written'} ${posts.size() ?: 'no'} 
+${posts.pluralize(msgPost, msgPosts)} &{'so.far'}</span></h3>
 
 #{list items:posts, as:'post'}
     <p class="post ${post_parity}">
@@ -10,5 +10,5 @@ ${posts.pluralize('post', 'posts')} so far</span></h3>
 #{/list}
 
 <p id="newPost" >
-    <a href="@{form()}"><span>+</span> write a new post</a>
+    <a href="@{form()}"><span>+</span> &{'write.new.post'}</a>
 </p>

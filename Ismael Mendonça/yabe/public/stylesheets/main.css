@@ -459,6 +459,7 @@ tr.odd {
     -webkit-border-radius: 8px;
     font-size: 80%;
     padding: 2px 10px;
+    font-weight: bolder;
 }
 
 .crudField .tag.selected {
@@ -472,6 +473,7 @@ tr.odd {
     padding: 0;
     color: pink;
     -webkit-box-shadow: none;
+    position: initial;
 }
 
 /** Login **/
@@ -573,4 +575,20 @@ select {
 
 .crudField textarea {
     width: 95%;
+}
+
+.language {
+    width: 35px;
+    height: 35px;
+}
+
+#main .langArea {
+    float: right;
+}
+
+.languageSelected {
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 20px;
 }
