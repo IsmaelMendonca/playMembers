@@ -11,23 +11,21 @@ Comments = Comments
 User = User 
 Users = Users 
 LogOut = Log out
+Welcome = Welcome
+YouHaveWritten= you have written
+soFar = so far
+writeANewPost = write a new post
+AboutThisBlog = About this blog
+OlderPosts = Older Posts
+FromThisBlog = From this blog
 
+AddPost = Add Post
+AddTags = Add Tags
+AddComments = Add Comments
+AddUsers = Add Users
 
-title=Title
-content=Content
-postedAt=Posted at
-author=Author
-post=Related post
-tags=Tags set
-name=Common name
-email=Email
-password=Password
-fullname=Full name
-isAdmin=User is admin
+search = search
 
-secure.username=Your email:
-secure.password=Your password:
-secure.signin=Log in now
 
 
 
