@@ -7,7 +7,7 @@
 
     <div class="objectForm">
     #{form action:@save(object._key()), enctype:'multipart/form-data'}
-        #{crud.form fields:['author', 'content', 'post']}
+        #{crud.form fields:['author', 'post', 'content']}
         #{/crud.form}
         
         

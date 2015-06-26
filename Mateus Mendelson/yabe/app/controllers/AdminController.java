@@ -63,4 +63,9 @@ public class AdminController extends Controller {
         post.save();
         index();
     }
+    
+    public static void setLanguage(String language, String path) {
+    	play.i18n.Lang.change(language);
+    	redirect(path);
+    }
 }

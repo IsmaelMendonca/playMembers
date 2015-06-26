@@ -1,4 +1,5 @@
 package controllers;
+import play.i18n.Lang;
 import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.With;
@@ -24,6 +25,11 @@ public class AdminController extends Controller {
         String user = SecurityController.connected();
         List<PostBO> posts = PostBO.find("author.email", user).fetch();
         render(posts);
+    }
+    
+    public static void selectlanguage(String language, String currentURL){
+    	Lang.change(language);
+    	redirect(currentURL);
     }
     
     public static void form(Long id) {

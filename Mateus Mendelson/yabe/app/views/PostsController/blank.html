@@ -6,8 +6,8 @@
     <h2 id="crudBlankTitle">&{'crud.blank.title', type.modelName}</h2>
     <div class="objectForm">
     #{form action:@create(), enctype:'multipart/form-data'}
-        #{crud.form fields:['title', 'postedAt', 'content', 'author', 'tags']}
-         #{crud.custom 'postedAt'}
+        #{crud.form fields:['title', /*'postedAt',*/ 'content', 'author', 'tags']}
+         <!-- #{crud.custom 'postedAt'}
 			#{field 'object.postedAt'}
 			    <label for="${field.id}">
 			        &{'postedAt'}
@@ -17,7 +17,7 @@
 			        <span class="error">${field.error.raw()}</span>
 			    #{/ifError}
 			#{/field}
-         #{/crud.custom}
+         #{/crud.custom} -->
         #{/crud.form}
         <p class="crudButtons">
             <input type="submit" name="_save" value="&{'crud.save', type.modelName}" />

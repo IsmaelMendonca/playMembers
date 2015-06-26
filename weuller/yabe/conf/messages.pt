@@ -1,0 +1,71 @@
+#Arquivo em Português
+
+loginMessage = Entre para escrever algo 
+
+MyPosts = Minhas Publicações
+Post = Publicação 
+Posts = Publicações 
+Tag = Tag
+Tags = Tags 
+Comment = Commentário 
+Comments = Commentários
+User = Usuário
+Users = Usuários 
+LogOut = Sair
+Welcome = Bem Vindo
+YouHaveWritten= Você escreveu
+soFar = até o momento
+writeANewPost = Escreva um novo post
+AddPost = Adicionar Publicação
+AddTags = Adicionar Tags
+AddComments = Adicionar Comentários
+AddUsers = Adicionar Usuários
+AboutThisBlog = Sobre este blog
+OlderPosts = Posts Antigos
+FromThisBlog = para este blog
+SubmitYourComment = Enviar seu comentário
+
+crud.title=Administração
+crud.home=Pagina Inicial
+crud.blank=Novo
+crud.index.title=Choose the object to edit
+crud.index.objectType=Object type
+crud.index.action=
+crud.index.add=Adicionar
+crud.add=Adicionar &{%s}
+crud.list.title=&{%s}
+crud.list.size=%d &{%s}
+crud.list.totalSize=%d total
+crud.pagination.previous=« Anterior
+crud.pagination.next=Próximo »
+crud.pagination.last=Último »»
+crud.pagination.first=«« Primeiro
+crud.show.title=Editar &{%s}
+crud.save=Salvar
+crud.saveAndContinue=Salvar e continuar editando
+crud.cancel=Cancelar
+crud.hasErrors=Por favor corrija os erros
+crud.blank.title=Adicionar &{%s}
+crud.saveAndAddAnother=Salvar e criar outro
+crud.delete=Apagar &{%s}
+crud.created=O &{%s} foi criado
+crud.saved=O &{%s} foi salvo
+crud.deleted=O &{%s} foi apagado
+crud.delete.error=Objeto não pode ser apagado
+crud.search=Buscar
+crud.none=(None)
+crud.selectValue=(Por favor selecione um valor)
+
+crud.help.required=Obrigatório.
+crud.help.minlength=O tamanho minimo é %d.
+crud.help.maxlength=O tamanho máximo é %d.
+crud.help.email=Endereço de e-mail válido.
+crud.help.dateformat=&{%s} formato.
+crud.help.numeric=Numérico.
+crud.help.min=Maior que %d.
+crud.help.future=No futuro.
+crud.help.past=No passado.
+crud.help.after=Após %s.
+crud.help.before=Antes %s.
+crud.help.range=Entre %d e %d
+

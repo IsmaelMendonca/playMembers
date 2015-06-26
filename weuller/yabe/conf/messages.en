@@ -1,0 +1,34 @@
+#Arquivo em Ingês
+
+loginMessage = Log in to write something
+
+MyPosts = My Posts
+Post = Post
+Posts = Posts
+Tag = Tag
+Tags = Tags 
+Comment = Comment 
+Comments = Comments 
+User = User 
+Users = Users 
+LogOut = Log out
+Welcome = Welcome
+YouHaveWritten= you have written
+soFar = so far
+writeANewPost = write a new post
+AboutThisBlog = About this blog
+OlderPosts = Older Posts
+FromThisBlog = From this blog
+SubmitYourComment = Submit your comment
+
+AddPost = Add Post
+AddTags = Add Tags
+AddComments = Add Comments
+AddUsers = Add Users
+
+search = search
+
+
+
+
+
