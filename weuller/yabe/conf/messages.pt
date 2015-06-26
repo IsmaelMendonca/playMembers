@@ -2,8 +2,9 @@
 
 loginMessage = Entre para escrever algo 
 
-Post = Post 
-Posts = Posts 
+MyPosts = Minhas Publicações
+Post = Publicação 
+Posts = Publicações 
 Tag = Tag
 Tags = Tags 
 Comment = Commentário 
@@ -15,14 +16,14 @@ Welcome = Bem Vindo
 YouHaveWritten= Você escreveu
 soFar = até o momento
 writeANewPost = Escreva um novo post
-AddPost = Adicionar Post
+AddPost = Adicionar Publicação
 AddTags = Adicionar Tags
 AddComments = Adicionar Comentários
 AddUsers = Adicionar Usuários
 AboutThisBlog = Sobre este blog
 OlderPosts = Posts Antigos
 FromThisBlog = para este blog
-
+SubmitYourComment = Enviar seu comentário
 
 crud.title=Administração
 crud.home=Pagina Inicial
@@ -41,7 +42,7 @@ crud.pagination.last=Último »»
 crud.pagination.first=«« Primeiro
 crud.show.title=Editar &{%s}
 crud.save=Salvar
-crud.saveAndContinue=Salvas e continuar editando
+crud.saveAndContinue=Salvar e continuar editando
 crud.cancel=Cancelar
 crud.hasErrors=Por favor corrija os erros
 crud.blank.title=Adicionar &{%s}

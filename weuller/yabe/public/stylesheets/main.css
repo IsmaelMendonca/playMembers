@@ -279,7 +279,7 @@ form p {
 }
 
 form textarea {
-    width: 70%;
+	width: 95%;
     height: 150px;
 }
 
@@ -434,6 +434,7 @@ tr.odd {
 
 .crudField label {
     color: #B8FA5C;
+    width: 100%;
 }
 
 .crudHelp {
@@ -454,6 +455,7 @@ tr.odd {
 	border: 0px;
 	top: 0;
 	right: 0;
+	left: 0px;
 	padding: 3px 10px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
@@ -570,11 +572,29 @@ tr.odd {
 	top: -18px;
 	width: 196px;
 	height: 30px;
-
 }
 
 .language {
 	width: 25px;
 	height: 25px;
 	vertical-align: bottom;
+}
+
+.crudField input[type="text"] {
+  width: 100%;
+}
+
+select {
+  width: 100%;
+}
+
+.crudButtons {
+  margin-top: 20px;
+  border-top: 1px dotted #8B98AD;
+  padding-top: 10px;
+  text-align: right;
+}
+
+.submitButton {
+  position: relative;
 }

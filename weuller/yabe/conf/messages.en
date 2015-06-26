@@ -2,6 +2,7 @@
 
 loginMessage = Log in to write something
 
+MyPosts = My Posts
 Post = Post
 Posts = Posts
 Tag = Tag
@@ -18,6 +19,7 @@ writeANewPost = write a new post
 AboutThisBlog = About this blog
 OlderPosts = Older Posts
 FromThisBlog = From this blog
+SubmitYourComment = Submit your comment
 
 AddPost = Add Post
 AddTags = Add Tags
