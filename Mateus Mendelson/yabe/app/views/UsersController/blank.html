@@ -4,29 +4,17 @@
 <div id="crudBlank" class="${type.name}">
 
     <h2 id="crudBlankTitle">&{'crud.blank.title', type.modelName.replace('Controller','')}</h2>
+
     <div class="objectForm">
     #{form action:@create(), enctype:'multipart/form-data'}
-    	<div class="left">
-    		#{crud.form fields:['author', 'content']}
+        <div class="left">
+    		#{crud.form fields:['email', 'fullname']}
     		#{/crud.form}
     	</div>
-    	<div class="right">
-    		#{crud.form fields:['title', 'tags']}
+    	<div class="right" style="top:-4px;">
+    		#{crud.form fields:['password', 'isAdmin']}
     		#{/crud.form}
     	</div>
-        <!-- #{crud.form fields:['title', /*'postedAt',*/ 'content', 'author', 'tags']}
-         #{crud.custom 'postedAt'}
-			#{field 'object.postedAt'}
-			    <label for="${field.id}">
-			        &{'postedAt'}
-			    </label>
-			    <input id="${field.id}" class="${field.errorClass}" type="text" name="${field.name}" value="${field?.value?.format()}" size="20" readonly = "readonly"/>
-			    #{ifError field.name}
-			        <span class="error">${field.error.raw()}</span>
-			    #{/ifError}
-			#{/field}
-         #{/crud.custom}
-        #{/crud.form} -->
         <p class="crudButtons">
             <input type="submit" name="_save" value="&{'crud.save', type.modelName}" />
             <input type="submit" name="_saveAndContinue" value="&{'crud.saveAndContinue', type.modelName}" />
@@ -34,4 +22,5 @@
         </p>
     #{/form}
     </div>
+
 </div>

@@ -11,8 +11,7 @@ import play.mvc.With;
 
 @With(Secure.class)
 public class AdminController extends Controller {
-    
-    @Before
+	@Before
     static void setConnectedUser() {
         if(SecurityController.isConnected()) {
             UserBO user = UserBO.find("byEmail", SecurityController.connected()).first();

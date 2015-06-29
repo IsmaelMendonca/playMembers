@@ -10,17 +10,7 @@
     </div>
 
     <div id="crudListTable">
-		#{crud.table fields:['title', 'postedAt', 'author']}
-		 #{crud.custom 'title'}
-		  <a href="@{PostsController.show(object.id)}">
-		   ${object.title}
-		  </a>
-		 #{/crud.custom}
-		 
-		 #{crud.custom 'postedAt'}
-		  ${object.getDateBrazil()}
-		 #{/crud.custom}
-		#{/crud.table}
+        #{crud.table /}
     </div>
 
     <div id="crudListPagination">

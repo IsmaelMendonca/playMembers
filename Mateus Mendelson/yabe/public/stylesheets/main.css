@@ -1,5 +1,9 @@
 /** Main layout **/
 
+/* .objectForm label { */
+/* 	width=100%; */
+/* } */
+
 #languages {
 	color: black;
 	background-color: white;
@@ -452,8 +456,22 @@ tr.odd {
     padding-left: 0;
 }
 
+div.left {
+	width: 400px;
+	display: inline-block;
+}
+
+div.right {
+	position: relative;
+	right: -20px;
+	top: -110px;
+	width: 400px;
+	display: inline-block;
+}
+
 .crudField label {
     color: #B8FA5C;
+    width: 100%;
 }
 
 .crudHelp {
@@ -578,4 +596,16 @@ tr.odd {
 
 #crud #crudContent a {
 	color: #000;
+}
+
+select, form textarea, .tags-list {
+	width:100%;
+}
+
+.crudField .crudHelp {
+	font-size: 70%;
+	color: #888;
+	display: block;
+	margin-left: 10px;
+	margin-top: 5px;
 }

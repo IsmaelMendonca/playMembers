@@ -44,6 +44,7 @@ here=aqui
 Enter=Coloque
 some=algumas
 views.AdminController.form.publishPost=Publicar este post no blog
+views.admin.administration=Administração
 
 # Default CRUD messages
 # ~~~~~~
@@ -90,3 +91,5 @@ crud.help.past=No passado.
 crud.help.after=Depois de %s.
 crud.help.before=Antes de %s.
 crud.help.range=Entre %d e %d
+validation.required=
+views.AdminController.form.error.correct=Por favor, corrija os erros

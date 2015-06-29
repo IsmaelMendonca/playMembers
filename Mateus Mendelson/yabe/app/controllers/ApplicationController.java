@@ -13,7 +13,6 @@ import play.mvc.Before;
 import play.mvc.Controller;
 
 public class ApplicationController extends Controller {
-	
 	@Before
 	static void addDefaults() {
 	    renderArgs.put("blogTitle", Play.configuration.getProperty("blog.title"));

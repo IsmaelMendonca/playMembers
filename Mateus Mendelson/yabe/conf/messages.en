@@ -37,3 +37,5 @@ views.AdminController.form.this_post=this post
 views.AdminController.form.error.correct=Please correct these errors.
 views.AdminController.form.Post_title=Post title
 views.AdminController.form.publishPost=Publish this post to the blog
+views.admin.administration=Administration
+views.AdminController.form.error.correct=Please correct the errors
