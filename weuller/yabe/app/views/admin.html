@@ -26,20 +26,20 @@
         
 		<div id="main">
 		    <ul id="adminMenu">
-		        <li class="${request.controller == 'Admin' ? 'selected' : ''}">
+		        <li class="${request.controller == 'AdminController' ? 'selected' : ''}">
 		            <a href="@{index()}">&{'MyPosts'}</a>
 		        </li>
 		        #{secure.check 'admin'}
-		            <li class="${request.controller == 'Posts' ? 'selected' : ''}">
+		            <li class="${request.controller == 'PostsController' ? 'selected' : ''}">
 		                <a href="@{PostsController.list()}">&{'Posts'}</a>
 		            </li>
-		            <li class="${request.controller == 'Tags' ? 'selected' : ''}">
+		            <li class="${request.controller == 'TagsController' ? 'selected' : ''}">
 		                <a href="@{TagsController.list()}">&{'Tags'}</a>
 		            </li>
-		            <li class="${request.controller == 'Comments' ? 'selected' : ''}">
+		            <li class="${request.controller == 'CommentsController' ? 'selected' : ''}">
 		                <a href="@{CommentsController.list()}">&{'Comments'}</a>
 		            </li>
-		            <li class="${request.controller == 'Users' ? 'selected' : ''}">
+		            <li class="${request.controller == 'UsersController' ? 'selected' : ''}">
 		                <a href="@{UsersController.list()}">&{'Users'}</a>
 		            </li>
 		        #{/secure.check}
@@ -56,9 +56,9 @@
 		</div>
         
         <p id="footer">
-            Yabe is a (not so) powerful blog engine built with the 
+        	&{'footerMessage1'}
             <a href="https://www.playframework.com">Play framework</a>
-            as a tutorial application.
+            &{'footerMessage2'}
         </p>
         
     </body>

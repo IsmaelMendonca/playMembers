@@ -1,6 +1,8 @@
 #Arquivo em Português
 
 loginMessage = Entre para escrever algo 
+footerMessage1 = Yabe é uma (ainda não) ferramenta poderosa de criação de blog utilizando o 
+footerMessage2 = como uma aplicação de ensino.
 
 MyPosts = Minhas Publicações
 Post = Publicação 
@@ -24,6 +26,31 @@ AboutThisBlog = Sobre este blog
 OlderPosts = Posts Antigos
 FromThisBlog = para este blog
 SubmitYourComment = Enviar seu comentário
+PublishThisPostToTheBlog = Publicar está postagem no blog
+Edit = Editar
+ThisPost = está postagem
+Write = Escreva
+ANewPost = uma nova postagem
+PostTitle = Titulo da Postagem
+WriteHere = Escreva aqui
+EnterSomeTags = Introduza algumas tags
+
+title=Titulo
+content=Conteúdo
+postedAt=Postado em
+author=Autor
+post=Postagem relacionada
+tags=Tags definidas
+name=Nome comum
+email=Email
+password=Senha
+fullname=Nome completo
+isAdmin=Administrador
+secure.username=Seu email:
+secure.password=Sua senha:
+secure.signin=Conecte-se agora
+object.postedAt=Postado em
+
 
 crud.title=Administração
 crud.home=Pagina Inicial
@@ -68,4 +95,5 @@ crud.help.past=No passado.
 crud.help.after=Após %s.
 crud.help.before=Antes %s.
 crud.help.range=Entre %d e %d
+validation.required=
 

@@ -1,25 +1,25 @@
 #{extends 'admin.html' /}
  
 #{ifnot post?.id}
-    <h3>Write, <span>a new post</span></h3>
+    <h3>&{'Write'}, <span>&{'ANewPost'}</span></h3>
 #{/ifnot}
 #{else}
-    <h3>Edit, <span>this post</span></h3>
+    <h3>&{'Edit'}, <span>&{'ThisPost'}</span></h3>
 #{/else}
  
 #{form @save(post?.id)}
  
     #{ifErrors}
         <p class="error">
-            Please correct these errors.
+            &{'crud.hasErrors'}.
         </p>
     #{/ifErrors}
      
     <p>
         #{field 'title'}
-        <label>Post title:</label>
+        <label>&{'PostTitle'}:</label>
         <input type="text" name="${field.name}" 
-            value="${post?.title}" />
+            value="${post?.title}"  #{ifError 'post.title'}class="hasError"#{/ifError}/>
         #{ifError field.name}
         	<span class="error">#{error 'post.title' /}</span>
         #{/ifError}
@@ -28,8 +28,8 @@
  
     <p>
         #{field 'content'}
-        <label>Write here:</label>
-        <textarea name="${field.name}">${post?.content}</textarea>
+        <label>&{'WriteHere'}:</label>
+        <textarea name="${field.name}" #{ifError 'post.content'}class="hasError"#{/ifError}>${post?.content}</textarea>
         #{ifError field.name}
         	<span class="error">#{error 'post.title' /}</span>
         #{/ifError}
@@ -38,13 +38,13 @@
  
     <p>
         #{field 'tags'}
-        <label>Enter some tags:</label>
+        <label>&{'EnterSomeTags'}:</label>
         <input type="text" size="50" 
             name="${field.name}" value="${post?.tags?.join(' ')}" />
         #{/field}
     </p>
     <p class="crudButtons">
-        <input class="submitButton" type="submit" value="Publish this post to the blog" />
+        <input class="submitButton" type="submit" value="&{'PublishThisPostToTheBlog'}" />
     </p>
     
 #{/form}
