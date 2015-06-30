@@ -14,14 +14,14 @@ public class AdminController extends Controller {
 	@Before
     static void setConnectedUser() {
         if(SecurityController.isConnected()) {
-            UserBO user = UserBO.find("byEmail", SecurityController.connected()).first();
+            UserBO user = UserBO.findFirstByEmail(SecurityController.connected());
             renderArgs.put("user", user.getFullname());
         }
     }
  
     public static void index() {
         String user = SecurityController.connected();
-        List<PostBO> posts = PostBO.find("author.email", user).fetch();
+        List<PostBO> posts = PostBO.findAuthorEmail(user);
         render(posts);
     }
     
@@ -37,7 +37,7 @@ public class AdminController extends Controller {
         PostBO post;
         if(id == null) {
             // Create post
-            UserBO author = UserBO.find("byEmail", SecurityController.connected()).first();
+            UserBO author = UserBO.findFirstByEmail(SecurityController.connected());
             post = new PostBO(author, title, content);
         } else {
             // Retrieve post

@@ -8,6 +8,7 @@ import play.data.validation.Email;
 import play.data.validation.Password;
 import play.data.validation.Required;
 import play.data.validation.Unique;
+import play.db.jpa.GenericModel;
 import play.db.jpa.Model;
 
 @Table(name = "tb_user")
@@ -32,7 +33,7 @@ public class UserBO extends Model {
     private boolean isAdmin;
     
     public UserBO(String email, String password, String fullname) {
-        this.email = email;
+        this.email = email.toLowerCase();;
         this.password = password;
         this.fullname = fullname;
     }
@@ -50,7 +51,7 @@ public class UserBO extends Model {
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		this.email = email.toLowerCase();
 	}
 
 	public String getPassword() {
@@ -76,5 +77,8 @@ public class UserBO extends Model {
 	public void setAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
 	}
- 
+	
+	public static UserBO findFirstByEmail (String email) {
+		return UserBO.find("byEmail", email).<UserBO>first();
+	}
 }

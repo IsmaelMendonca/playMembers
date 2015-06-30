@@ -12,6 +12,7 @@ import java.util.TreeSet;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -42,6 +43,7 @@ public class PostBO extends Model {
     
     @Required
     @ManyToOne
+    @JoinColumn(name = "id_author")
     private UserBO author;
     
     @OneToMany(mappedBy="post", cascade=CascadeType.ALL)
@@ -75,6 +77,14 @@ public class PostBO extends Model {
     
     public static List<PostBO> findTaggedWith(String... tags) {
         return PostBO.find("select distinct p from Post p join p.tags as t where t.name in (:tags) group by p.id, p.author, p.title, p.content,p.postedAt having count(t.id) = :size").bind("tags", tags).bind("size", tags.length).fetch();
+    }
+    
+    public static List<PostBO> findByPostedAtOrderDesc() {
+    	return PostBO.find("order by postedAt desc").fetch();
+    }
+    
+    public static List<PostBO> findAuthorEmail(String user) {
+    	return PostBO.find("author.email", user).fetch();
     }
     
     public PostBO addComment(String author, String content) {

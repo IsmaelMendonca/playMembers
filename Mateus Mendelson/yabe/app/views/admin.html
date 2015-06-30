@@ -31,7 +31,7 @@
 		        </li>
 		        #{secure.check 'admin'}
 		            <li class="${request.controller == 'PostsController' ? 'selected' : ''}">
-		                <a href="@{PostsController.list()}">Posts</a>
+		                <a href="@{PostsController.list()}">&{'Posts'}</a>
 		            </li>
 		            <li class="${request.controller == 'TagsController' ? 'selected' : ''}">
 		                <a href="@{TagsController.list()}">Tags</a>

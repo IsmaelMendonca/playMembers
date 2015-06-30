@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -32,6 +33,7 @@ public class CommentBO extends Model {
     
     @ManyToOne
     @Required
+    @JoinColumn(name = "id_post")
     private PostBO post;
     
     public CommentBO(PostBO post, String author, String content) {

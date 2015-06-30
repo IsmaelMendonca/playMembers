@@ -26,9 +26,11 @@ public class ApplicationController extends Controller {
 	}
 
     public static void index() {
-    	PostBO frontPost = PostBO.find("order by postedAt desc").first();
+    	List<PostBO> posts = PostBO.findByPostedAtOrderDesc();
     	
-    	List<PostBO> olderPosts = PostBO.find("order by postedAt desc").from(1).fetch(10);
+    	PostBO frontPost = posts.get(0);
+    	
+    	List<PostBO> olderPosts = posts.subList(1, posts.size() < 10 ? posts.size() : 11);
     	
         render(frontPost, olderPosts);
     }
