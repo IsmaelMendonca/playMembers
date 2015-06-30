@@ -40,7 +40,7 @@
         #{field 'tags'}
         <label>&{'EnterSomeTags'}:</label>
         <input type="text" size="50" 
-            name="${field.name}" value="${post?.tags?.join(' ')}" />
+            name="${field.name}" value="${post?.tags?.sort()?.join(' ')}" />
         #{/field}
     </p>
     <p class="crudButtons">
