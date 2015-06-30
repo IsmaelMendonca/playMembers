@@ -1,21 +1,22 @@
 package models;
  
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import play.data.validation.MaxSize;
 import play.data.validation.Required;
 import play.db.jpa.Model;
@@ -40,12 +41,15 @@ public class PostBO extends Model {
     
     @Required
     @ManyToOne
+    @JoinColumn(name = "id_author")
     private UserBO author;
     
     @OneToMany(mappedBy="post", cascade=CascadeType.ALL)
     private List<CommentBO> comments;
     
+
     @ManyToMany(cascade=CascadeType.PERSIST)
+    @JoinTable(name = "rl_post_tag", joinColumns = { @JoinColumn(name = "id_post") }, inverseJoinColumns = { @JoinColumn(name = "id_tag") })
     private Set<TagBO> tags;
      
     public PostBO(UserBO author, String title, String content) {
