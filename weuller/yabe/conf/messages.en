@@ -31,10 +31,22 @@ PostTitle = Post title
 WriteHere = Write here
 EnterSomeTags = Enter some tags
 search = search
+
 AddPost = Add Post
 AddTags = Add Tags
 AddComments = Add Comments
+AddComment = Add Comment
 AddUsers = Add Users
+AddUser = Add User
+AddPost = Add Post
+
+EditPost = Edit Post
+EditComment = Edit Comment
+EditUser = Edit User
+
+DeletePost = Delete Post
+DeleteComment = Delete Comment
+DeleteUser = Delete User
 
 title=Title
 content=Content

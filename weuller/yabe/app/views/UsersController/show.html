@@ -3,14 +3,11 @@
 
 <div id="crudShow" class="${type.name}">
 
-    <h2 id="crudShowTitle">&{'EditComment'}</h2>
+    <h2 id="crudShowTitle">&{'EditUser'}</h2>
 
     <div class="objectForm">
     #{form action:@save(object._key()), enctype:'multipart/form-data'}
-        #{crud.form fields:['author', 'post', 'content']}
-        #{/crud.form}
-        
-        
+        #{crud.form /}
         <p class="crudButtons">
             <input type="submit" name="_save" value="&{'crud.save', type.modelName}" />
             <input type="submit" name="_saveAndContinue" value="&{'crud.saveAndContinue', type.modelName}" />
@@ -20,7 +17,7 @@
 
     #{form @delete(object._key())}
         <p class="crudDelete">
-            <input type="submit" value="&{'DeleteComment'}" />
+            <input type="submit" value="&{'DeleteUser'}" />
         </p>
     #{/form}
 

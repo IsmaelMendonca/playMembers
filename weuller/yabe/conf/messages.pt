@@ -18,10 +18,23 @@ Welcome = Bem Vindo
 YouHaveWritten= Você escreveu
 soFar = até o momento
 writeANewPost = Escreva um novo post
+
 AddPost = Adicionar Publicação
 AddTags = Adicionar Tags
 AddComments = Adicionar Comentários
+AddComment = Adicionar Commentário
 AddUsers = Adicionar Usuários
+AddUser = Adicionar Usuário
+AddPost = Adicionar Postagem
+
+EditPost = Editar Postagem
+EditComment = Editar Commentário
+EditUser = Editar Usuário
+
+DeletePost = Apagar Postagem
+DeleteComment = Apagar Commentário
+DeleteUser = Apagar Usuário
+
 AboutThisBlog = Sobre este blog
 OlderPosts = Posts Antigos
 FromThisBlog = para este blog

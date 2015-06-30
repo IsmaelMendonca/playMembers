@@ -3,12 +3,11 @@
 
 <div id="crudBlank" class="${type.name}">
 
-    <h2 id="crudBlankTitle">&{'AddPost'}</h2>
+    <h2 id="crudBlankTitle">&{'AddUser'}</h2>
 
     <div class="objectForm">
     #{form action:@create(), enctype:'multipart/form-data'}
-        #{crud.form fields:['author', 'title', 'content', 'tags']}
-        #{/crud.form}
+        #{crud.form /}
         <p class="crudButtons">
             <input type="submit" name="_save" value="&{'crud.save', type.modelName}" />
             <input type="submit" name="_saveAndContinue" value="&{'crud.saveAndContinue', type.modelName}" />
@@ -16,5 +15,4 @@
         </p>
     #{/form}
     </div>
-
 </div>
