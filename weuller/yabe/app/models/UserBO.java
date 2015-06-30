@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import controllers.SecurityController;
 import play.data.validation.Email;
 import play.data.validation.Password;
 import play.data.validation.Required;
@@ -80,4 +81,8 @@ public class UserBO extends Model {
 	public String toString() {
 		return email;
 	}
+	
+    public static UserBO getUserByEmail(String connected) {
+    	return UserBO.find("byEmail", connected).first();
+    }
 }

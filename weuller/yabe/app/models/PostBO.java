@@ -141,6 +141,19 @@ public class PostBO extends Model {
         ).bind("tags", tags).bind("size", tags.length).fetch();
     }
 
+    public static List<PostBO> getPostList() {
+    	return PostBO.find("order by postedAt desc").from(1).fetch(10);
+    }
+    
+    public static List<PostBO> getPostListForUser(String user) {
+    	return PostBO.find("author.email", user).fetch();
+    }
+    
+    public static PostBO getFrontPost() {
+    	return PostBO.find("order by postedAt desc").first();
+    }
+    
+    
 	@Override
 	public String toString() {
 //		return "Post [title=" + title + ", postedAt=" + postedAt + ", content="

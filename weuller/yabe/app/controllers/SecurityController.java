@@ -19,7 +19,7 @@ public class SecurityController extends Secure.Security {
 	
 	static boolean check(String profile) {
 	    if("admin".equals(profile)) {
-	        return UserBO.find("byEmail", connected()).<UserBO>first().getIsAdmin();
+	        return UserBO.getUserByEmail(connected()).getIsAdmin();
 	    }
 	    return false;
 	}

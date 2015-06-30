@@ -6,20 +6,16 @@ import play.libs.Codec;
 import play.libs.Images;
 import play.mvc.Before;
 import play.mvc.Controller;
-
 import java.io.IOException;
 import java.util.List;
-
 import models.PostBO;
 
 
 public class ApplicationController extends Controller {
 	 
     public static void index() {
-        PostBO frontPost = PostBO.find("order by postedAt desc").first();
-        List<PostBO> olderPosts = PostBO.find(
-            "order by postedAt desc"
-        ).from(1).fetch(10);
+        PostBO frontPost = PostBO.getFrontPost();
+        List<PostBO> olderPosts = PostBO.getPostList();
         render(frontPost, olderPosts);
     }
     
