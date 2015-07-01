@@ -76,8 +76,6 @@ public class CommentBO extends Model {
         this.postedAt = new Date();
     }
     
-    
-
 	public CommentBO() {
 		super();
         this.postedAt = new Date();

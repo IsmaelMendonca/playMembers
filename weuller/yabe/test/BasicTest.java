@@ -1,7 +1,16 @@
-import org.junit.*;
-import java.util.*;
-import play.test.*;
-import models.*;
+import java.util.List;
+import java.util.Map;
+
+import models.CommentBO;
+import models.PostBO;
+import models.TagBO;
+import models.UserBO;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import play.test.Fixtures;
+import play.test.UnitTest;
 
 public class BasicTest extends UnitTest {
 

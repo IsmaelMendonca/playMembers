@@ -146,7 +146,7 @@ public class PostBO extends Model {
     }
     
     public static List<PostBO> getPostListForUser(String user) {
-    	return PostBO.find("author.email", user).fetch();
+    	return PostBO.find("author.email=?1", user).fetch();
     }
     
     public static PostBO getFrontPost() {

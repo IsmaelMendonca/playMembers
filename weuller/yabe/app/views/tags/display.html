@@ -5,20 +5,26 @@
         <a href="@{ApplicationController.show(_post.id)}">${_post.title}</a>
     </h2>
     <div class="post-metadata">
-        <span class="post-author">by ${_post.author.fullname}</span>,
+        <span class="post-author">&{'By'} ${_post.author.fullname}</span>,
         <span class="post-date">${_post.postedAt.format('dd MMM yy')}</span>
         #{if _as != 'full'}
     		<span class="post-comments">
-        		&nbsp;|&nbsp; ${_post.comments.size() ?: 'no'}
-        		comment${_post.comments.size().pluralize()}
+        		&nbsp;|&nbsp;
+ 				#{if _post.comments.size()}
+                    ${_post.comments.size()}
+                #{/if}
+                #{else}
+                    &{'no'}
+                #{/else}
+        		&{'Comment'}${_post.comments.size().pluralize()}
         		#{if _post.comments}
-            		, latest by ${_post.comments[0].author}
+            		, &{'LatestBy'} ${_post.comments[0].author}
         		#{/if}
     		</span>
 		#{/if}
 		#{elseif _post.tags}
     		<span class="post-tags">
-        		- Tagged
+        		- &{'Tagged'}
         		#{list items:_post.tags, as:'tag'}
             		<a href="@{ApplicationController.listTagged(tag.name)}">${tag}</a>${tag_isLast ? '' : ', '}
         		#{/list}
@@ -36,14 +42,19 @@
 #{if _as == 'full'}
     <div class="comments">
         <h3>
-            ${_post.comments.size() ?: 'no'} 
-            comment${_post.comments.size().pluralize()}
+ 				#{if _post.comments.size()}
+                    ${_post.comments.size()}
+                #{/if}
+                #{else}
+                    &{'no'}
+                #{/else}
+            &{'Comment'}${_post.comments.size().pluralize()}
         </h3>
         
         #{list items:_post.comments, as:'comment'}
             <div class="comment">
                 <div class="comment-metadata">
-                    <span class="comment-author">by ${comment.author},</span>
+                    <span class="comment-author">&{'By'} ${comment.author},</span>
                     <span class="comment-date">
                         ${comment.postedAt.format('dd MMM yy')}
                     </span>

@@ -2,9 +2,11 @@ package models;
  
 import java.util.List;
 import java.util.Map;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
 import play.data.validation.Required;
 import play.db.jpa.Model;
 
