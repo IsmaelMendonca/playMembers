@@ -4,6 +4,8 @@ loginMessage = Entre para escrever algo
 footerMessage1 = Yabe é uma (ainda não) ferramenta poderosa de criação de blog utilizando o 
 footerMessage2 = como uma aplicação de ensino.
 
+TagsController=Tags
+
 MyPosts = Minhas Publicações
 Post = Publicação 
 Posts = Publicações 

@@ -4,6 +4,8 @@ loginMessage = Log in to write something
 footerMessage1 = Yabe is a (not so) powerful blog engine built with the 
 footerMessage2 = as a tutorial application. 
 
+TagsController=Tags
+
 MyPosts = My Posts
 Post = Post
 Posts = Posts
