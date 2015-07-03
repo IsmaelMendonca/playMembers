@@ -13,6 +13,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -50,6 +51,7 @@ public class PostBO extends Model {
     private List<CommentBO> comments;
     
     @ManyToMany(cascade=CascadeType.PERSIST)
+    @JoinTable(name = "rl_post_tag", joinColumns = { @JoinColumn(name = "id_post") }, inverseJoinColumns = { @JoinColumn(name = "id_tag") })
     private Set<TagBO> tags;
      
     public PostBO(UserBO author, String title, String content) {
@@ -84,7 +86,7 @@ public class PostBO extends Model {
     }
     
     public static List<PostBO> findAuthorEmail(String user) {
-    	return PostBO.find("author.email", user).fetch();
+    	return PostBO.find("author.email = ?1", user).fetch();
     }
     
     public PostBO addComment(String author, String content) {

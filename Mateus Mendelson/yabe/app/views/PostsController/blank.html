@@ -14,19 +14,7 @@
     		#{crud.form fields:['title', 'tags']}
     		#{/crud.form}
     	</div>
-        <!-- #{crud.form fields:['title', /*'postedAt',*/ 'content', 'author', 'tags']}
-         #{crud.custom 'postedAt'}
-			#{field 'object.postedAt'}
-			    <label for="${field.id}">
-			        &{'postedAt'}
-			    </label>
-			    <input id="${field.id}" class="${field.errorClass}" type="text" name="${field.name}" value="${field?.value?.format()}" size="20" readonly = "readonly"/>
-			    #{ifError field.name}
-			        <span class="error">${field.error.raw()}</span>
-			    #{/ifError}
-			#{/field}
-         #{/crud.custom}
-        #{/crud.form} -->
+
         <p class="crudButtons">
             <input type="submit" name="_save" value="&{'crud.save', type.modelName}" />
             <input type="submit" name="_saveAndContinue" value="&{'crud.saveAndContinue', type.modelName}" />

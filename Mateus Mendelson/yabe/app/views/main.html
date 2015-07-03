@@ -22,10 +22,16 @@
 			        <a href="@{AdminController.index()}">&{'views.main.tools.login'}</a>
 			    </li>
 			</ul>
+			
             <div id="title">
 	    		<span class="about">&{'views.main.title.about'}</span>
 	    		<h1><a href="@{ApplicationController.index()}">${blogTitle}</a></h1>
 	    		<h2>${blogBaseline}</h2>
+	    		
+	    		<div id="languages" style="right: -690px;top: -100px;">
+				    <a href="@{ApplicationController.setLanguage('pt', request.path)}" style="color:'black';"><img class="langImg" alt="flag-ptBR" height="25" width="25" src="/./public/images/icn-flag-ptBR.ico"> Português</a>
+				    <a href="@{ApplicationController.setLanguage('en', request.path)}" style="color:'black';"><img class="langImg" alt="flag-en" height="25" width="25" src="/./public/images/icn-flag-en.ico"> English</a>
+				</div>
 			</div>
         </div>
         

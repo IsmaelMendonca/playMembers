@@ -13,10 +13,18 @@ import play.mvc.Before;
 import play.mvc.Controller;
 
 public class ApplicationController extends Controller {
+	private static String lng="pt-br";
+	
 	@Before
 	static void addDefaults() {
-	    renderArgs.put("blogTitle", Play.configuration.getProperty("blog.title"));
-	    renderArgs.put("blogBaseline", Play.configuration.getProperty("blog.baseline"));
+		if(lng.equals("pt")) {
+			renderArgs.put("blogTitle", Play.configuration.getProperty("blog.title.pt"));
+		    renderArgs.put("blogBaseline", Play.configuration.getProperty("blog.baseline.pt"));
+		}
+		else if(lng.equals("en")) {
+		    renderArgs.put("blogTitle", Play.configuration.getProperty("blog.title.en"));
+		    renderArgs.put("blogBaseline", Play.configuration.getProperty("blog.baseline.en"));
+		}
 	}
 	
 	public static void show(Long id) {
@@ -30,7 +38,7 @@ public class ApplicationController extends Controller {
     	
     	PostBO frontPost = posts.get(0);
     	
-    	List<PostBO> olderPosts = posts.subList(1, posts.size() < 10 ? posts.size() : 11);
+    	List<PostBO> olderPosts = posts.subList(1, posts.size() < 10 ? posts.size() : 10);
     	
         render(frontPost, olderPosts);
     }
@@ -44,17 +52,32 @@ public class ApplicationController extends Controller {
     {
         PostBO post = PostBO.findById(postId);
         
-        if(!Play.id.equals("test")) {
-            validation.equals(code, Cache.get(randomID)).message("Invalid code. Please type it again");
+        if(lng.equals("pt")) {
+        	if(!Play.id.equals("test")) {
+	            validation.equals(code, Cache.get(randomID)).message("Código inválido. Por favor, tente de novo");
+	        }
+	        
+	        if(validation.hasErrors()) {
+	            render("ApplicationController/show.html", post, randomID);
+	        }
+	        post.addComment(author, content);
+	        flash.success("Obrigado por publicar, %s", author);
+	        Cache.delete(randomID);
+	        show(postId);
         }
-        
-        if(validation.hasErrors()) {
-            render("Application/show.html", post, randomID);
+        else if(lng.equals("en")) {
+	        if(!Play.id.equals("test")) {
+	            validation.equals(code, Cache.get(randomID)).message("Invalid code. Please type it again");
+	        }
+	        
+	        if(validation.hasErrors()) {
+	            render("ApplicationController/show.html", post, randomID);
+	        }
+	        post.addComment(author, content);
+	        flash.success("Thanks for posting %s", author);
+	        Cache.delete(randomID);
+	        show(postId);
         }
-        post.addComment(author, content);
-        flash.success("Thanks for posting %s", author);
-        Cache.delete(randomID);
-        show(postId);
     }
     
     public static void captcha(String id) throws IOException {
@@ -69,6 +92,10 @@ public class ApplicationController extends Controller {
         List<PostBO> posts = PostBO.findTaggedWith(tag);
         render(tag, posts);
     }
-
-
+    
+    public static void setLanguage(String language, String path) {
+    	play.i18n.Lang.change(language);
+    	lng = language;
+    	redirect(path);
+    }
 }

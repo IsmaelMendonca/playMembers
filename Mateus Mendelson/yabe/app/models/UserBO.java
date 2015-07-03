@@ -8,7 +8,6 @@ import play.data.validation.Email;
 import play.data.validation.Password;
 import play.data.validation.Required;
 import play.data.validation.Unique;
-import play.db.jpa.GenericModel;
 import play.db.jpa.Model;
 
 @Table(name = "tb_user")
@@ -79,6 +78,6 @@ public class UserBO extends Model {
 	}
 	
 	public static UserBO findFirstByEmail (String email) {
-		return UserBO.find("byEmail", email).<UserBO>first();
+		return UserBO.find("email = ?1", email).<UserBO>first();
 	}
 }

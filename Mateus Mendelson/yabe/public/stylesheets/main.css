@@ -609,3 +609,7 @@ select, form textarea, .tags-list {
 	margin-left: 10px;
 	margin-top: 5px;
 }
+
+textarea {
+    resize: vertical;
+}

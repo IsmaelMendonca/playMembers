@@ -2,6 +2,7 @@ package models;
  
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -31,7 +32,7 @@ public class CommentBO extends Model {
     @Column(name = "content")
     private String content;
     
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     @Required
     @JoinColumn(name = "id_post")
     private PostBO post;
