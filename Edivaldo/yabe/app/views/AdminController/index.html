@@ -1,0 +1,10 @@
+#{extends 'admin.html' /}
+<h3>&{'welcome',user,posts.size(),posts.pluralize(messages.get('Post'),messages.get('posts'))}</h3>
+#{list items:posts, as: 'post'}
+	<p class="post ${post_parity}">
+		<a href="@{AdminController.form(post.id)}">${post.title}</a>
+	</p>
+#{/list}
+<p id="newPost">
+	<a href="@{form()}"><span>+</span>&{'Write.post'}</a>
+</p>

@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+.tags-list .tag{
+	cursor: pointer;
+	padding: 1 px 4px;
+}
+.crudField .tags-list .selected{
+	background: #222;
+	color: #fff;
+	margin: 2px;
+}

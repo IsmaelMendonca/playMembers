@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Administration</title>		
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        #{get 'moreStyles' /}	
+        <link rel="stylesheet" type="text/css" media="screen" 
+                href="@{'/public/stylesheets/main.css'}" />
+        <link rel="shortcut icon" type="image/png" 
+                href="@{'/public/images/favicon.png'}" />
+        <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}"></script>
+        <script src="@{'/public/javascripts/jquery.tools-1.2.5.toolbox.expose.min.js'}"></script>
+    </head>
+    <body id="admin">
+        
+        <div id="header">
+            <div id="logo">
+                yabe. <span>&{'yabe.administration'}</span>
+            </div>
+            <ul id="tools">
+                <li>
+                    <a href="@{Secure.logout()}">&{'yabe.logout'}</a>
+                </li>
+            </ul>
+        </div>
+          <div id="main">
+    	    <ul id="adminMenu">
+		        <li class="${request.controller == 'AdminController' ? 'selected' : ''}">
+		            <a href="@{AdminController.index()}">&{'yabe.myPost'}</a>
+		        </li>
+		        #{secure.check 'admin'}
+		            <li class="${request.controller == 'PostsController' ? 'selected' : ''}">
+		                <a href="@{PostsController.list()}">&{'Posts'}</a>
+		            </li>
+		            <li class="${request.controller == 'TagsController' ? 'selected' : ''}">
+		                <a href="@{TagsController.list()}">&{'Tags'}</a>
+		            </li>
+		            <li class="${request.controller == 'CommentsController' ? 'selected' : ''}">
+		                <a href="@{CommentsController.list()}">&{'Comments'}</a>
+		            </li>
+		            <li class="${request.controller == 'UsersController' ? 'selected' : ''}">
+		                <a href="@{UsersController.list()}">&{'Users'}</a>
+		            </li>
+		        #{/secure.check}
+		        <div style="text-align: right;">
+			         <div class="lang" style="background: #ffffff;">
+				   		<img src="../../public/images/icn-flag-ptBR.ico" style="width: 25px"/>
+				    	<a href="@{AdminController.lang('pt', request.path)}">Português</a>
+				    	<img src="../../public/images/icn-flag-en.ico" style="width: 25px"/>
+				   		<a href="@{AdminController.lang('en',request.path)}">English</a>
+				    </div>
+			    </div>
+		    </ul>		    
+		    #{doLayout /} 
+		</div>
+        <p id="footer">
+            &{'yabe.engine'} 
+            <a href="https://www.playframework.com">&{'yabe.framework'}</a>
+            &{'yabe.tutorial'}
+        </p>
+        
+    </body>
+</html>

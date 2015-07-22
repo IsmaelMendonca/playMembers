@@ -1,0 +1,42 @@
+#{extends 'admin.html'/}
+
+#{ifnot post?.id}
+	<h3>&{'Write.post'}, </h3>
+#{/ifnot}
+#{else}
+	<h3>&{'Edit.post'}</h3>
+#{/else
+}
+#{form @save(post?.id)}
+
+	#{ifErrors}
+		<p class="error">
+			&{'correct.errors'}
+		</p>
+	#{/ifErrors}
+	
+	<p>
+		#{field 'title'}
+			<label>&{'post.title'}: </label>
+			<input type="text" name="${field.name}"
+				value="${post?.title}"/>
+		#{/field}
+	</p>
+	<p>
+		#{field 'content'}
+			<label>&{'write.here'}:</label>
+			<textarea name="${field.name}">${post?.content}</textarea>
+		#{/field}
+	</p>
+	<p>
+		#{field 'tags'}
+			<label>&{'enter.tags'}:</label> 
+			<input type="text" size="50"
+			name="${field.name}" value="${post?.tags?.sort()?.join(' ')}"/>
+		#{/field}
+	</p>
+	<p  class="crudButtons" style="text-align: end;" >
+		<input type="submit" value="&{'publish.post'}"/>
+	</p>
+#{/form}
+		
